@@ -1,0 +1,439 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* App Layout */
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.app__header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app__header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.app__header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.app__main {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.app__section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e5e5;
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--primary {
+  background-color: #3B82F6;
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: #2563EB;
+}
+
+.btn--secondary {
+  background-color: #6B7280;
+  color: white;
+}
+
+.btn--secondary:hover {
+  background-color: #4B5563;
+}
+
+.btn--danger {
+  background-color: #EF4444;
+  color: white;
+}
+
+.btn--danger:hover {
+  background-color: #DC2626;
+}
+
+.btn--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+/* Habit Manager Styles */
+.habit-manager__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.habit-manager__header h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+
+.habit-form {
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.habit-form__field {
+  margin-bottom: 1rem;
+}
+
+.habit-form__field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.habit-form__field input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease;
+}
+
+.habit-form__field input:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.color-picker {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+.color-option--selected {
+  border-color: #1f2937;
+  transform: scale(1.1);
+}
+
+.habit-form__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.habits-list__empty {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 2rem;
+}
+
+.habit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.habit-item:hover {
+  background-color: #f3f4f6;
+  transform: translateX(4px);
+}
+
+.habit-item__content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.habit-item__color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.habit-item__details {
+  flex: 1;
+}
+
+.habit-item__name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.habit-item__description {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Calendar Styles */
+.calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.calendar__title {
+  font-size: 1.5rem;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.calendar__nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-bottom: 1rem;
+}
+
+.calendar__weekday {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 700;
+  color: #6b7280;
+  background-color: #f9fafb;
+  font-size: 0.85rem;
+}
+
+.calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendar__day {
+  background-color: white;
+  min-height: 120px;
+  padding: 0.5rem;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.calendar__day:hover {
+  background-color: #f9fafb;
+}
+
+.calendar__day--other-month {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+}
+
+.calendar__day--today {
+  background-color: #eff6ff;
+  border: 2px solid #3b82f6;
+}
+
+.calendar__day-number {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.calendar__day--today .calendar__day-number {
+  color: #3b82f6;
+  font-weight: 700;
+}
+
+.calendar__day-habits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.habit-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.habit-checkbox:hover {
+  transform: scale(1.1);
+}
+
+.habit-checkbox--completed {
+  color: white;
+}
+
+.habit-checkbox__check {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.calendar__day-progress {
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+.calendar__empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app__main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  
+  .app__header {
+    padding: 1.5rem;
+  }
+  
+  .app__header h1 {
+    font-size: 2rem;
+  }
+  
+  .calendar__day {
+    min-height: 80px;
+    padding: 0.25rem;
+  }
+  
+  .habit-form__actions {
+    flex-direction: column;
+  }
+  
+  .habit-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .calendar__nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar__grid {
+    gap: 0;
+  }
+  
+  .calendar__day {
+    min-height: 60px;
+    padding: 0.25rem;
+  }
+  
+  .habit-checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .habit-checkbox__check {
+    font-size: 10px;
+  }
+}
