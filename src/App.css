@@ -339,6 +339,12 @@ body {
   gap: 0.25rem;
 }
 
+.habit-item-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .habit-checkbox {
   width: 20px;
   height: 20px;
@@ -365,6 +371,16 @@ body {
   font-size: 12px;
   font-weight: bold;
   line-height: 1;
+}
+
+.habit-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .calendar__day-progress {
@@ -435,5 +451,13 @@ body {
   
   .habit-checkbox__check {
     font-size: 10px;
+  }
+  
+  .habit-title {
+    font-size: 0.6rem;
+  }
+  
+  .habit-item-row {
+    gap: 0.25rem;
   }
 }

@@ -97,21 +97,25 @@ export const Calendar: React.FC<CalendarProps> = ({
                   {habits.map((habit) => {
                     const isCompleted = getHabitStatus(habit.id, date);
                     return (
-                      <button
-                        key={habit.id}
-                        className={`habit-checkbox ${
-                          isCompleted ? 'habit-checkbox--completed' : ''
-                        }`}
-                        style={{
-                          backgroundColor: isCompleted ? habit.color : 'transparent',
-                          borderColor: habit.color,
-                        }}
-                        onClick={() => handleHabitToggle(habit.id, date)}
-                        title={`${habit.name} - ${isCompleted ? 'Completed' : 'Not completed'}`}
-                        aria-label={`Toggle ${habit.name} for ${dateStr}`}
-                      >
-                        {isCompleted && <span className="habit-checkbox__check">✓</span>}
-                      </button>
+                      <div key={habit.id} className="habit-item-row">
+                        <button
+                          className={`habit-checkbox ${
+                            isCompleted ? 'habit-checkbox--completed' : ''
+                          }`}
+                          style={{
+                            backgroundColor: isCompleted ? habit.color : 'transparent',
+                            borderColor: habit.color,
+                          }}
+                          onClick={() => handleHabitToggle(habit.id, date)}
+                          title={`${habit.name} - ${isCompleted ? 'Completed' : 'Not completed'}`}
+                          aria-label={`Toggle ${habit.name} for ${dateStr}`}
+                        >
+                          {isCompleted && <span className="habit-checkbox__check">✓</span>}
+                        </button>
+                        <span className="habit-title" style={{ color: habit.color }}>
+                          {habit.name}
+                        </span>
+                      </div>
                     );
                   })}
                   
